@@ -1,9 +1,11 @@
-<div class="song">
+<div class="song" (click)="onClick()">
   <h3>Titulo: {{ song.title }}</h3>
-  <p>Autor: {{ song.author }}</p>
-  <p>Grupo: {{ song.group }}</p>
-  <p>Ano de publicacion: {{ song.year }}</p>
-  <p>Album: {{ song.album }}</p>
-  <p>BPM: {{ song.bpm }}</p>
-  <p>Duracion: {{ song.length }}</p>
+  <p *ngIf="show && title === song.title">Autor: {{ song.author }}</p>
+  <p *ngIf="show && title === song.title">Grupo: {{ song.group }}</p>
+  <p *ngIf="show && title === song.title">
+    Ano de publicacion: {{ song.year }}
+  </p>
+  <p *ngIf="show && title === song.title">Album: {{ song.album }}</p>
+  <p *ngIf="show && title === song.title">BPM: {{ song.bpm }}</p>
+  <p *ngIf="show && title === song.title">Duracion: {{ song.length }}</p>
 </div>

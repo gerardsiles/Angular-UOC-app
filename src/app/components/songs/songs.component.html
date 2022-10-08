@@ -1,1 +1,8 @@
-<app-song *ngFor="let song of songs" [song]="song"></app-song>
+<app-song
+  *ngFor="let song of songs"
+  [song]="song"
+  [show]="showSongInfo"
+  [title]="title"
+  (songClick)="toggleShowSong($event)"
+>
+</app-song>

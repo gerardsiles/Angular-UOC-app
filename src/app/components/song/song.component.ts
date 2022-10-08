@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Song } from 'src/app/Song';
 
 @Component({
@@ -7,9 +7,19 @@ import { Song } from 'src/app/Song';
   styleUrls: ['./song.component.css'],
 })
 export class SongComponent implements OnInit {
-  @Input() song!: Song;
+  @Input() song: Song;
+  @Input() show: boolean = false;
+  @Input() title: string;
+  @Output() songClick: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  // Emit the song clicked to the songs component
+  onClick() {
+    let title = this.song.title;
+    console.log(title);
+    this.songClick.emit(title);
+  }
 }
