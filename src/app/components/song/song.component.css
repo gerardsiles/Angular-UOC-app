@@ -1,5 +1,5 @@
 .song {
-  background: #f4f4f4;
+  background: rgb(107, 102, 102);
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
@@ -9,4 +9,5 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: lightblue;
 }

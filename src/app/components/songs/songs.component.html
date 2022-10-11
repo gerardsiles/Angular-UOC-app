@@ -1,8 +1,8 @@
-<app-song
-  *ngFor="let song of songs"
-  [song]="song"
-  [show]="showSongInfo"
-  [title]="title"
-  (songClick)="toggleShowSong($event)"
->
-</app-song>
+<div class="songs-container" *ngFor="let song of songs">
+  <div class="song" [routerLink]="['/songs', song.title]">
+    <h3>Titulo: {{ song.title }}</h3>
+    <p>Autor: {{ song.author }}</p>
+  </div>
+</div>
+<!-- Render song information -->
+<router-outlet></router-outlet>

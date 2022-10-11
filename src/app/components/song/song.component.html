@@ -1,5 +1,5 @@
 <div class="song" (click)="onClick()">
-  <h3>Titulo: {{ song.title }}</h3>
+  <h3 [routerLink]="['/songs', song.title]">Titulo: {{ song.title }}</h3>
   <p *ngIf="show && title === song.title">Autor: {{ song.author }}</p>
   <p *ngIf="show && title === song.title">Grupo: {{ song.group }}</p>
   <p *ngIf="show && title === song.title">
@@ -9,3 +9,5 @@
   <p *ngIf="show && title === song.title">BPM: {{ song.bpm }}</p>
   <p *ngIf="show && title === song.title">Duracion: {{ song.length }}</p>
 </div>
+
+<router-outlet></router-outlet>

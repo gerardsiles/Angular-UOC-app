@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Song } from 'src/app/Song';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-song',
@@ -8,11 +9,12 @@ import { Song } from 'src/app/Song';
 })
 export class SongComponent implements OnInit {
   @Input() song: Song;
+  @Output() songTitle: Song;
   @Input() show: boolean = false;
   @Input() title: string;
   @Output() songClick: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {}
 
